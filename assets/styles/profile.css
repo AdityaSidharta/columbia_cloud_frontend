@@ -1,0 +1,29 @@
+#display-image{
+    width: 400px;
+    height: 225px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+.logo{
+    height: 30%;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+}
+.extend{
+margin-left: 800px;
+}
+a:hover{
+opacity: 0.3;
+}
+.main-text{
+margin-top: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+input:hover{
+opacity: 1;
+}

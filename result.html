@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/history.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/styles/result.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img class="logo" src="assets/images/logo.png" alt="" srcset=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse extend" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-right">
+    <li class="nav-item active hover">
+      <a class="nav-link" href="./home.html">Home</a>
+    </li>
+    <li class="nav-item active hover">
+      <a class="nav-link" href="./history.html">History</a>
+    </li>
+    <li class="nav-item active hover">
+      <a class="nav-link" href="https://frontendccbd1327.auth.us-east-1.amazoncognito.com/login?client_id=3dkpu6e2e1mnt9mcvm4rsadhi7&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://frontendccbd1327.s3.amazonaws.com/home.html">Logout</a>
+    </li>
+
+  </ul>
+    </div>
+</nav>
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-4"><img id="upload_image" height="300" width="240"></div>
+    <div class="col-8">
+      <div class="row">Upload Date: <span id="upload_date"></span> </div>
+      <div class="row">Language: <span id="upload_language"></span></div>
+      <br>
+      <textarea style="width:400px; height:200px" id="upload_summary"></textarea>
+    </div>
+  </div>
+</div>
+
+<script src="./assets/scripts/const.js"></script>
+<script src="./assets/scripts/result.js"></script>
+
+</body>
+</html>

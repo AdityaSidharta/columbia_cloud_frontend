@@ -1,0 +1,76 @@
+#display-image{
+    width: 400px;
+    height: 225px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+.logo{
+    height: 30%;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+}
+.extend{
+    margin-left: 800px;
+}
+a:hover{
+    opacity: 0.3;
+}
+.main-text{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    margin: 30px;
+}
+input:hover{
+    opacity: 1;
+}
+
+.formbold-form-input {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    outline: none;
+    resize: none;
+}
+
+.another input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.another {
+    position: relative;
+    border: 1px dashed #e6c7c7;
+    border-radius: 6px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    text-align: center;
+}
+.formbold-drop-file {
+    display: block;
+    font-weight: 800;
+    color: purple;
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+
+h3 .upload-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

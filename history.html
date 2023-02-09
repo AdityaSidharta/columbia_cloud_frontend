@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/styles/history.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"
+        ><img class="logo" src="assets/images/logo.png" alt="" srcset=""
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse extend" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-right">
+          <li class="nav-item active hover">
+            <a class="nav-link" href="./home.html">Home</a>
+          </li>
+          <li class="nav-item active hover">
+            <a class="nav-link" href="./history.html">History</a>
+          </li>
+          <li class="nav-item active hover">
+            <a
+              class="nav-link"
+              href="https://frontendccbd1327.auth.us-east-1.amazoncognito.com/login?client_id=3dkpu6e2e1mnt9mcvm4rsadhi7&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://frontendccbd1327.s3.amazonaws.com/home.html"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h3 class="main-text">History</h3>
+
+    <div class="container"></div>
+
+    <script>
+      // let abc
+      console.log(sessionStorage.getItem("test1"));
+      console.log(sessionStorage.getItem("user_id"));
+      user_id = sessionStorage.getItem("user_id");
+      fetch(
+        "https://50lbs1nk8i.execute-api.us-east-1.amazonaws.com/testHistory/gethistory",
+        {
+          method: "POST",
+          mode: "cors",
+          headers: {
+            "x-amz-meta-userid": user_id,
+            "content-type": "application/json",
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          console.log(data["results"]["results"][0], "+++++");
+          let val = "";
+          for (var i = 0; i < data["results"]["results"].length; i++) {
+            let chom = `
+      <div class="card row">
+      <div class="col-2"><img style="width:100%;" src="${data["results"]["results"][i].url}" alt="Image" srcset=""></div>
+      <div class="col-2"></div>
+      <div class="col-8">
+          <div class="row"></div>
+          <div class="summary">Summary: ${data["results"]["results"][i].s}</div>
+      </div>
+      </div>`;
+            val = val + chom;
+          }
+          document.querySelector(".container").innerHTML = val;
+        });
+
+      // date = "19 October 2022"
+      // summary = "Lorem ipsum"
+      // document.querySelector('.date').innerHTML("Upload Date: " + date)
+      // document.querySelector('.summary').innerHTML("Summary: " + summary)
+      // document.querySelector('.link').innerHTML(`<a href="./imageid">View </a> `)
+
+      // var urlToParse = window.location.href;
+      // console.log(urlToParse)
+      // var jwt_token=urlToParse.match(/\#(?:id_token)\=([\S\s]*?)\&/)[1];
+      // var user_id=parseJwt(jwt_token);
+    </script>
+  </body>
+</html>
